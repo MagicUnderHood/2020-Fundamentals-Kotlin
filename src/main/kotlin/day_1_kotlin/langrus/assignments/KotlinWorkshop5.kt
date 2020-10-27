@@ -27,15 +27,31 @@ class Bicycle: Transport(1) {
 //  См. ниже.
 // ? Имена классов и файлов Котлин принято называть с заглавной буквы, в формате "camelCase".
 // Например: "SomeLongClassName"
-//interface ...
+interface Fuelable {
+    val fuelType: String
+}
 
 // TODO 2: Создай свои собственные классы, например "Bus" и "Car".
 //  Эти классы не будут полностью написаны с нуля, они должны расширять общий класс "Transport",
 //  и дополнительно реализовывать придуманный тобой интерфейс.
 // ? Класс может наследовать только один класс, но реализовывать несколько интерфейсов, например:
 // class Kitty(): Cat, Cuteable, Sleepable, Furryable {}
-//class Bus ...
-//class Car ...
+class Bus: Transport(20), Fuelable {
+    override fun drive() {
+        println("Bus driving witn $passengersCount passenger")
+    }
+
+    override val fuelType = "Gasoline"
+
+}
+class ElectricCar: Transport(4), Fuelable {
+    override fun drive() {
+        println("Electric car driving with $passengersCount passenger")
+    }
+
+    override val fuelType = "Electricity"
+
+}
 
 // TODO 3: Протестируй работоспособность твоего транспорта.
 object VehiclesTest {
@@ -50,12 +66,16 @@ object VehiclesTest {
 
     private fun testBus() {
         println("Testing how bus drives...")
-//        val bus = ...
+        val bus = Bus()
+        bus.drive()
+        println("Bus fuel is ${bus.fuelType}")
     }
 
     private fun testCar() {
         println("Testing how car drives...")
-//        val car = ...
+        val electricCar = ElectricCar()
+        electricCar.drive()
+        println("Bus fuel is ${electricCar.fuelType}")
     }
 
     private fun testBicycle() {

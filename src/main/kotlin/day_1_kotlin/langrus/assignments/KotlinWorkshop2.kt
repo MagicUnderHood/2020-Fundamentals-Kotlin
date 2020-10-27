@@ -41,8 +41,15 @@ object KotlinWorkshop2 {
             print("Введите число в диапазоне 0..$nonNullUpperBound включительно: ")
             // Сохраняем введённое с клавиатуры число в "userInput".
             val userInput: Int = scanner.nextInt()
-            if (true) {
-
+            if (userInput == randomNumber) {
+                println("Поздравляю! Задуманное число $randomNumber")
+                break
+            } else {
+                if (userInput < randomNumber) {
+                    println("Ваше число меньше задуманного, пожалуйста продолжаем.")
+                } else {
+                    println("Ваше число больше задуманного, пожалуйста продолжаем.")
+                }
             }
         }
 
@@ -51,14 +58,15 @@ object KotlinWorkshop2 {
 
         // TODO 2: Раскомментируй. Проинициализируй "numbersArray".
         //  "numbersArray" это массив целочисленных значений, длинной 5 чисел.
-//        val numbersArray =
+        val numbersArray = IntArray(5)
 
         // TODO 3: Раскомментируй. Проинициализируй свойство "size" длинной массива "numbersArray".
         //  Измени условия повтора бесконечного цикла while так, чтобы он стал конечным и выполнился не более "size" раз.
         println("\n Программа 2. \"Введите коллекцию чисел\"")
-//        val size =
+        val size = numbersArray.size
         var counter = 0
         while (true) {
+            if (counter == size) break
             print("Введите число в диапазоне 0..10 включительно: ")
             val userInput: Int = scanner.nextInt()
 
@@ -68,8 +76,10 @@ object KotlinWorkshop2 {
             //  - Если введено 9 - сложи и добавь (2 + size);
             //  - Иначе не добавляй ничего.
             //  Используй выражение "When".
-            when {
-
+            when (userInput) {
+                3 -> numbersArray + userInput
+                5 -> numbersArray + (5 * size)
+                9 -> numbersArray + (2 + size)
             }
 
             counter++
