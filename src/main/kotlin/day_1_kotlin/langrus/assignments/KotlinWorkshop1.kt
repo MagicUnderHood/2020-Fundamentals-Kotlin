@@ -33,14 +33,14 @@ object KotlinWorkshop1 {
         //  Присвой "notNullUserString" значение из "nullableElvisString".
         //  Если "nullableElvisString" равно null, сделай значение "notNullUserString" равным значению пустой строки "emptyString".
         //  Исправить присвоение используя Элвис-оператор "?:".
-//        var notNullUserString: String =
-//        println("Строка результат равна $notNullUserString")
+        var notNullUserString: String = nullableElvisString ?: emptyString
+        println("Строка результат равна $notNullUserString")
 
         // TODO 2: Раскомментируй.
         //  По факту мы знаем, что значение "nullableAssertionString" не равно null.
         //  Сделай принудительное присвоение используя !! оператор.
-//        notNullUserString =
-//        println("Строка результат равна $notNullUserString")
+        notNullUserString = nullableAssertionString!!
+        println("Строка результат равна $notNullUserString")
 
 
         /* Бонусные задания */
@@ -50,9 +50,9 @@ object KotlinWorkshop1 {
         //  Используй проверку на null '?', для сложения используй функцию '.plus()'. Внутри '.plus()' используй '?:'.
         val notNullAlternative = 0
         val firstNumber: Int? = 10
-        val secondNumber: Int? = 20
-//        val sum : Int? =
-//        println("Сумма равна {$sum}")
+        val secondNumber: Int? = null
+        val sum : Int? = firstNumber?.plus(secondNumber ?: notNullAlternative)
+        println("Сумма равна {$sum}")
 
 
         // TODO 4: Раскомментируй. Сохрани строку введённую с клавиатуры в переменную "stringInput".
