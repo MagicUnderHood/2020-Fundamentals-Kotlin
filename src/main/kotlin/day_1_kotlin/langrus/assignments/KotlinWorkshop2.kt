@@ -65,8 +65,7 @@ object KotlinWorkshop2 {
         println("\n Программа 2. \"Введите коллекцию чисел\"")
         val size = numbersArray.size
         var counter = 0
-        while (true) {
-            if (counter == size) break
+        while (counter < size) {
             print("Введите число в диапазоне 0..10 включительно: ")
             val userInput: Int = scanner.nextInt()
 
@@ -77,9 +76,9 @@ object KotlinWorkshop2 {
             //  - Иначе не добавляй ничего.
             //  Используй выражение "When".
             when (userInput) {
-                3 -> numbersArray + userInput
-                5 -> numbersArray + (5 * size)
-                9 -> numbersArray + (2 + size)
+                3 -> numbersArray[counter] = userInput
+                5 -> numbersArray[counter] = (5 * size)
+                9 -> numbersArray[counter] = (2 + size)
             }
 
             counter++
@@ -87,7 +86,7 @@ object KotlinWorkshop2 {
 
         // TODO 5: Выведи в консоль значения элементов массива и индекс, на котором они находятся.
         //  Новый элемент на новой строке. Это должно выглядеть как "индекс: значение".
-
+        numbersArray.forEachIndexed { index, i -> println("$index: $i") }
     }
 
 

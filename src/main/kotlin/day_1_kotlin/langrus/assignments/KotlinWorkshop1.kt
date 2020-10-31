@@ -50,7 +50,7 @@ object KotlinWorkshop1 {
         //  Используй проверку на null '?', для сложения используй функцию '.plus()'. Внутри '.plus()' используй '?:'.
         val notNullAlternative = 0
         val firstNumber: Int? = 10
-        val secondNumber: Int? = null
+        val secondNumber: Int? = 20
         val sum : Int? = firstNumber?.plus(secondNumber ?: notNullAlternative)
         println("Сумма равна {$sum}")
 
@@ -58,8 +58,8 @@ object KotlinWorkshop1 {
         // TODO 4: Раскомментируй. Сохрани строку введённую с клавиатуры в переменную "stringInput".
         // Когда программа запущена, ввод с клавиатуры ожидается внизу, во вкладке RUN.
         // Кликни в зоне открытого окна и введи строку.
-//        print("Пожалуйста введите строку: ")
-//        val stringInput: String? = MyScanner.scan.next() // <--- string input 1
+        print("Пожалуйста введите строку: ")
+        val stringInput: String? = MyScanner.scan.next() // <--- string input 1
 
         // TODO 5: Раскомментируй.
         //  Сохрани значения чисел введённух с клавиатуры в переменные "firstIntInput" и "secondIntInput".
@@ -67,12 +67,12 @@ object KotlinWorkshop1 {
         //  Используй проверку на null '?', для сложения используй функцию '.plus()'. Внутри '.plus()' используй '?:'.
         // Когда программа запущена, ввод с клавиатуры ожидается внизу, во вкладке RUN.
         // Кликни в зоне открытого окна и введи строку.
-//        print("Пожалуйста введите первое число: ")
-//        val firstIntInput: Int? = MyScanner.scan.nextInt() // <--- вводим первое число
-//        print("Пожалуйста введите второе число: ")
-//        val secondIntInput: Int? = MyScanner.scan.nextInt() // <--- вводим второе число
-//        val sumIntInputs : Int? = firstIntInput?.plus(secondIntInput ?: null) // <--- делаем замену потенциального 'null' значением по умолчанию
-//        println("Исходная строка: $stringInput, Сумма чисел: $sumIntInputs")
+        print("Пожалуйста введите первое число: ")
+        val firstIntInput: Int? = MyScanner.scan.nextInt() // <--- вводим первое число
+        print("Пожалуйста введите второе число: ")
+        val secondIntInput: Int? = MyScanner.scan.nextInt() // <--- вводим второе число
+        val sumIntInputs : Int? = firstIntInput?.plus(secondIntInput ?: notNullAlternative) // <--- делаем замену потенциального 'null' значением по умолчанию
+        println("Исходная строка: $stringInput, Сумма чисел: $sumIntInputs")
 
 
         /* Примеры */
