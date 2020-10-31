@@ -62,25 +62,27 @@ object VehiclesTest {
         testBus()
         testCar()
         testBicycle()
+        testBusParts()
     }
 
     private fun testBus() {
-        println("Testing how bus drives...")
+        println("\nTesting how bus drives...")
         val bus = Bus()
         bus.drive()
         println("Bus fuel is ${bus.fuelType}")
     }
 
     private fun testCar() {
-        println("Testing how car drives...")
+        println("\nTesting how car drives...")
         val electricCar = ElectricCar()
         electricCar.drive()
-        println("Bus fuel is ${electricCar.fuelType}")
+        println("Electric car fuel is ${electricCar.fuelType}")
     }
 
     private fun testBicycle() {
-        println("Testing how bicycle drives...")
-//        ...
+        println("\nTesting how bicycle drives...")
+        val bicycle = Bicycle()
+        bicycle.drive()
     }
 
 
@@ -91,10 +93,13 @@ object VehiclesTest {
     //  Т.е. каждый набор независимых свойств - отдельно, чтобы в тестируемой сущности были скрыты все свойства,
     //  не принадлежащие к данному набору.
     private fun testBusParts() {
-        println("Testing bus's feature 1...")
+        val testBus = Bus()
+        println("\nTesting bus's fuelable")
+        val testFuelableBus = testBus as Fuelable
+        println("FuelType = ${testFuelableBus.fuelType}")
 
-
-        println("Testing bus's feature 2...")
-
+        println("Testing bus's drivable")
+        val testDrivableBus = testBus as Driveable
+        testDrivableBus.drive()
     }
 }
