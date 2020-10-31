@@ -23,6 +23,7 @@ object KotlinWorkshop3 {
         val guesses = createIntArrayOfCapacity(capacity)
 
 
+
         /* Рабочая зона */
 
         var guessed = false
@@ -53,7 +54,7 @@ object KotlinWorkshop3 {
     //  Если введено число больше "randomNumber", выведи сообщение "Your Guess is higher, continue." и верни false;
     //  Если введено число меньше "randomNumber", выведи сообщение "Your Guess is lower, continue." и верни false.
     //  Можно использовать наработки из workshop 2, с отличием, что здесь это вынесенная функция, нет цикла и возвращает результат.
-    private fun playRound(userInput: Int, randomNumber: Int): Boolean {
+    private fun playRound(userInput: Int, randomNumber: Int) : Boolean {
         when {
             userInput == randomNumber -> {
                 println("Congratulations!")
@@ -70,6 +71,7 @@ object KotlinWorkshop3 {
     }
 
 
+
     /* Бонусные задания */
 
     // TODO (bonus): Напиши аналитическцую систему для игрового раунда,
@@ -81,6 +83,9 @@ object KotlinWorkshop3 {
         // TODO 4: Раскомментируй.
         //  Напиши функцию высшего порядка "countHigherGuesses" для вывода всех попыток воода, которые оказались выше "randomNumber".
         //  Функция должна возвращать число таких попыток как результат.
+//         countHigherGuesses(guesses, randomNumber) { counter ->
+//             println("Total count of higher guesses: $counter\n")
+//         }
         println("Число попыток выше randomNumber = ${guesses.countHigherGuesses(guesses, randomNumber)}")
 
         // TODO 5: Раскомментируй.
@@ -102,6 +107,14 @@ object KotlinWorkshop3 {
     }
 
     // TODO 4
+    private fun countHigherGuesses(
+        guesses: IntArray,
+        randomNumber: Int,
+        printer: (Int) -> Unit
+
+    ): Int {
+        var counter = 0
+        TODO()
     private fun IntArray.countHigherGuesses(guesses: IntArray, randomNumber: Int): Int {
         return guesses.count { guess -> guess > randomNumber }
     }
@@ -111,6 +124,7 @@ object KotlinWorkshop3 {
         guesses.filter { guess -> guess != -1 && guess < randomNumber }
             .forEach { println("Попытка ввода ниже randomNumber = $it") }
     }
+
 
 
     /* Для корректного прогона воркшопа не модифицируй утилиты ниже */

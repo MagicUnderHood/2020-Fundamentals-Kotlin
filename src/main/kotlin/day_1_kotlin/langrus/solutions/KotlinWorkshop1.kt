@@ -28,7 +28,7 @@ object KotlinWorkshop1 {
         println("Строка результат пустая $notNullUserString")
 
         // TODO 2: Раскомментируй.
-        //  По факту мы знаем, что значение "nullableAssertionString" не равно null (см. строку 17).
+        //  По факту мы знаем, что значение "nullableAssertionString" не равно null.
         //  Сделай принудительное присвоение используя !! оператор.
         notNullUserString = nullableAssertionString!!
         println("Строка результат равна $notNullUserString")
@@ -42,7 +42,7 @@ object KotlinWorkshop1 {
         val notNullAlternative = 0
         val firstNumber: Int? = 10
         val secondNumber: Int? = 20
-        val sum: Int? = firstNumber?.plus(secondNumber ?: firstNumber)
+        val sum: Int? = firstNumber?.plus(secondNumber ?: notNullAlternative)
         println("Сумма равна {$sum}")
 
 
